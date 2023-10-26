@@ -9,4 +9,17 @@ function burbleSort(array) {
   return array;
 }
 
-console.log(burbleSort([10, 2, 18, 5, 19]));
+function generateRange(n) {
+  let range = [];
+  for (let i = 0; i <= n; i++) {
+    range[i] = parseInt(Math.random() * 100000);
+  }
+  return range;
+}
+
+console.time();
+vetor = generateRange(100000);
+console.log(vetor);
+burbleSort(vetor);
+console.log(vetor);
+console.timeEnd();

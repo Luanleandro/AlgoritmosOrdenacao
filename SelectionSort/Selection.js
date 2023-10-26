@@ -14,6 +14,18 @@ function selectionSort(array, l, r) {
 
   selectionSort(array, l + 1, r);
 }
-v = [10, 2, 23, 1, 34, 18];
-selectionSort(v, 0, 5);
+
+function generateRange(n) {
+  let range = [];
+  for (let i = 0; i <= n; i++) {
+    range[i] = parseInt(Math.random() * 7000);
+  }
+  return range;
+}
+
+console.time();
+v = generateRange(7000);
 console.log(v);
+selectionSort(v, 0, 6999);
+console.log(v);
+console.timeEnd();

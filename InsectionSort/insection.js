@@ -11,8 +11,12 @@
 //   return array;
 // }
 
-// vetor = [5, 2, 20, 16, 6];
-// console.log(insectionSort(vetor, 0, 4));
+// console.time();
+// vetor = generateRange(100000);
+// console.log(vetor);
+// insectionSort(vetor, 0, 99999);
+// console.log(vetor);
+// console.timeEnd();
 
 function insectionSort(array) {
   for (let i = 1; i < array.length; i++) {
@@ -28,5 +32,16 @@ function insectionSort(array) {
   return array;
 }
 
-vetor = [5, 2, 7, 20, 16, 6, 50, 0];
-console.log(insectionSort(vetor));
+function generateRange(n) {
+  let range = [];
+  for (let i = 0; i <= n; i++) {
+    range[i] = parseInt(Math.random() * 100000);
+  }
+  return range;
+}
+
+console.time();
+vetor = generateRange(100000);
+insectionSort(vetor);
+console.log(vetor);
+console.timeEnd();
